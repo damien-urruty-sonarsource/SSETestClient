@@ -6,6 +6,14 @@ public class Main {
 
   public static void main(String[] args) throws Exception {
     ApacheHttpClient client = new ApacheHttpClient();
-    client.getStreamed(SERVER_API_URL, System.out::println);
+
+    do {
+      try {
+        client.getStreamed(SERVER_API_URL, System.out::println);
+      } catch(Exception e) {
+        // ignore and reconnect
+      }
+      System.out.println("reconnecting");
+    } while (true);
   }
 }
