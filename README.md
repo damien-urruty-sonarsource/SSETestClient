@@ -8,6 +8,6 @@ The client connects to `http://localhost:8080/eventStream`, and prints any recei
 
 > ./gradlew run
 
-The client should remain active forever.
+The client should remain active forever, reconnecting as soon as the request finishes.
 
 A server implementation can be found at [SSETestServer](https://github.com/damien-urruty-sonarsource/SSETestServer).
